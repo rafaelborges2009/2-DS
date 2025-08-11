@@ -1,0 +1,9 @@
+diadasemana = ["segunda","terça","quarta","quinta","sexta","sábado","domingo"]
+cargo = ["analista","estagiário","gerente"]
+funcionario = input("digite o dia da semana:)
+dia = input(" digite o dia da semana:")
+
+if funcionario in cargo and dia in diadasemana:
+   print("acesso liberado")
+else:
+   print("acesso negado")
