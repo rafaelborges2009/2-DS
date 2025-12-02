@@ -1,0 +1,20 @@
+print("Este é um algoritmo para calcular sua quantidade de calorias que você gasta sentado sem fazer nada apenas para sobreviver(Taxa Metabólica Basal)")
+
+Sexo = input("digite o sexo (M p/Masculino, F p/ Feminino):").upper()
+if Sexo == "M" or Sexo == "F":
+        break
+    else:
+            print("O sexo que você digitou está errado,\nnão se esqueça \nM para o sexo Masculino \nF para o sexo Feminino")
+
+Peso = float(input("Digite o peso em quilogramas(KG):"))
+Altura = float(input("Digite a altura em centímetros:"))
+Idade = int(input("Digite a sua idade:"))
+
+if Sexo == "M":
+    TMB = 66.47 + (13.75 * Peso) + (5.003 * Altura) - (6.775 * Idade)
+    print(f"A sua Taxa Metabólica Basal (TMB) é de {TMB:.2f} kcal/dia.")
+elif Sexo == "F":
+    TMB = 655.09 + (9.563 * Peso) + (1.85 * Altura) - (4.676 * Idade)
+    print(f"A sua Taxa Metabólica Basal (TMB) é de {TMB:.2f} kcal/dia.")
+else:
+    print("O sexo que você digitou está errado,\nnão se esqueça \nM para o sexo Masculino \nF para o sexo Feminino")
