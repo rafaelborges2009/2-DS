@@ -1,0 +1,9 @@
+import qrcode
+from PIL import Image
+dados = input("Digite algo para gerar qrcode:")
+qr = qrcode.QRCode(version=3, box_size=10,border=4)
+qr.add_data(dados)
+qr.make(fit=True)
+image=qr.make_image(fill ="Black",black_color="Peru")
+image.save("qr_code.png")
+Image.open("qr_code.png")
