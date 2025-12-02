@@ -1,0 +1,26 @@
+
+
+import turtle
+
+############screen start
+tela = turtle.Screen()
+tela.bgcolor("white")
+
+############ use turtle
+mydraw = turtle.Turtle()
+mydraw.color("red")
+mydraw.begin_fill()
+
+############ draw
+mydraw.left(140)
+mydraw.forward(180)
+mydraw.circle(-90, 200)
+mydraw.left(120)
+mydraw.circle(-90, 200)
+mydraw.forward(180)
+
+mydraw.end_fill()
+mydraw.hideturtle()
+
+##########loop
+tela.mainloop()
