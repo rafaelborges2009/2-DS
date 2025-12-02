@@ -1,0 +1,24 @@
+from prettytable import PrettyTable
+from datetime import datetime
+import pytz
+
+#Criando a tabela
+tabela = PrettyTable()
+tabela.field_names = ["Cidade", "Hora Mundial"]
+
+#Definindo os fusos horários
+cidades = {
+    "Nova work": "America/New_York",
+    "Tóquio": "Asia/Tokyo",
+    "Londres": "Europe/London", "São Paulo": "America/Sao_Paulo"
+
+}
+
+# Adicionando os dados à tabela
+for cidade, fuso in cidades.items():
+    zona = pytz.timezone(fuso)
+    hora_local = datetime.now(zona).strftime("%H:%M")
+    tabela.add_row([cidade, hora_local])
+
+# Exibindo a tabela
+print(tabela)
