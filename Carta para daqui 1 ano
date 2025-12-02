@@ -1,0 +1,36 @@
+import pyttsx3
+import datetime as dt
+
+data_permitida = dt.date( year=2026, month=12, day=31 )
+data_certa = data_permitida.strftime("%d/%m/%Y")
+
+nome = "Rafael Avelino"
+idade = 16
+
+def falar(texto):
+    engine = pyttsx3.init()
+    engine.say(texto)
+    engine.setProperty('rate', 140)
+    engine.runAndWait()
+
+def sistema():
+    print(f"bem vindo {nome}! esta é uma capsúla do tempo")
+    falar(f"bem, {nome}! esta é uma capsúla do tempo")
+    print("no dia 02/10/2025 voce estava no 2DS na escola Amacio Mazzaropi")
+    print(f"Este sistema consiste em uma carta que o seu eu do passado escreveu para o {nome} de hoje!\n")
+
+    data_atual_str = input(f"{nome}, digite a data de hoje no seguinte formato: dd/mm/yyyy: ")
+    try:
+        data_atual = dt.datetime.strptime(data_atual_str, "%d/%m/%Y").date()
+
+        if data_atual >= data_permitida:
+            print(f"perfeito, {nome}! já faz um ano que voce escreveu esssa carta e agora voce pode ler.")
+            print("Então daqui um ano você ja vai estar melhor mentalmente(eu espero), esse ano de 2025 foi foda, passei por muita pressão psicólogica e cobrança, mas estamos ai para aproveitar e colher os resultados no ano anterior")
+        else:
+            print(f"\n{nome}, ainda não passou um ano desde que voce elaborou essa carta. porfavor volte no dia {data_atual}.")
+            print("encerrando o sistema...")
+
+    except ValueError:
+        print("formato inválido. use o formato dd/mm/yyyy:")
+        print("encerrando o sistema...")
+sistema()
