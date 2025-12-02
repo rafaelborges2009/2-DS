@@ -1,0 +1,13 @@
+from cryptography.fernet import Fernet
+key = Fernet.generate_key()
+print("Encryption key:",key.decode())
+
+cipher = Fernet(key)
+
+message = "Whey Protein".encode()
+
+encrypted = cipher.encrypt(message)
+print("Encrypted String",encrypted.decode())
+
+decrypted = cipher.decrypt(encrypted)
+print("Decrypted String",decrypted.decode())
