@@ -1,0 +1,26 @@
+import periodictable
+
+def show():
+    while True:
+        try:
+            numAtomic = int(input("enter Atomic num:"))
+
+            if 1 <= numAtomic <= 110:
+                element = periodictable.elements[numAtomic]
+
+                print('Name:', element.name)
+                print('Symbol:', element.symbol)
+                print('Atomic mass:', element.mass)
+                print('Density:', element.density)
+            else:
+                print("wrong number, set to 118.")
+        except ValueError:
+            print("do you now what number are......")
+
+        again = input("Again? (y/n):").lower()
+        if again != 'y':
+            print("bye!")
+            break
+
+
+show()
